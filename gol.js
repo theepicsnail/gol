@@ -39,6 +39,18 @@ function randomButton(checkbox_list) {
 }
 document.getElementById("s_list").appendChild(randomButton(survive_checkboxes));
 document.getElementById("b_list").appendChild(randomButton(born_checkboxes));
+function rrs() {
+  var checkbox_list = survive_checkboxes.concat(born_checkboxes);
+    for(var id in checkbox_list) {
+      if ( Math.random() > .5)
+      checkbox_list[id].checked = true
+    else
+      checkbox_list[id].checked = false
+  }
+  saveState()
+  singlePoint();
+}
+
 
 function saveState() {
   var state = survive_checkboxes.concat(born_checkboxes);
